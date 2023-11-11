@@ -19,12 +19,12 @@ body{
 .box-dis{
     background-color: white;
     padding: 3vw;
-    height: 50vh;
-    width: 20vw;
+    height: fit-content;
     display: grid;
     grid-template-rows: 30% auto;
     border-radius: 30px;
     font-family: 'Open Sans', sans-serif;
+    row-gap: 5vh;
     
 }
 .input-holder p,.submit-btn{
@@ -45,6 +45,16 @@ body{
     background-color: #404040;
     border: none;
     color: white;
-    height: 5vh;
+    height: fit-content;
     border-radius: 7px;
+    font-size: 15pt;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.br{
+    border: 1px solid black;
+    width: 70%;
+    height: 3px;
+    background-color: black;
+    margin: 3% auto;
 }
