@@ -19,6 +19,7 @@ body{
 .box-dis{
     background-color: white;
     padding: 3vw;
+    padding-bottom: 10vh;
     height: fit-content;
     display: grid;
     grid-template-rows: 30% auto;

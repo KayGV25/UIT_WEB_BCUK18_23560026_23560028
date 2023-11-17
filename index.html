@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="scripts/script.js"></script>
     <title>Web app</title>
 </head>
 <body>
-
+    <div class="dark-bg hide" id="dark-bg"></div>
+    <div class="side-menu hide" id="side-menu">
+        <p class="close" onclick="sidebar()">Close menu</p>
+        <div class="side-menu-content">
+            <p><a href="index.html" style="text-decoration: none;">Home</a></p>
+            <p>Genre <span class="material-icons" style="float: right;" onclick="ShowContent()">add</span></p>
+            <div id="drop" class="drop">
+                <div class="sub-content">
+                    <a href="#">dadsfasdfasdf</a>
+                    <a href="#">asdsd</a>
+                    <a href="#">grewerg</a>
+                    <a href="#">kuykty</a>
+                </div>
+            </div>
+        </div>
+        <div class="logout">
+            <span class="material-icons">logout</span>
+            <p>Sign Out</p>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-cont">
+            <div class="left">
+                <span class="material-icons" style="font-size: 2.5vw; cursor: pointer;" onclick="sidebar()">menu</span>
+                <p class="Logo">MOVIESBAY</p>
+            </div>
+            <div class="search">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Enter Movie name..." id="search-content" class="input">
+            </div>
+            <div class="right">
+                <a href="upgrade-plan.html" class="Upgrd-plan">Upgrade plan</a>
+                <div class="ava"></div>
+            </div>
+        </div>
+    </nav>
 </body>
 </html>
