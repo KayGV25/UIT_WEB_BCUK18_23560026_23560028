@@ -44,6 +44,10 @@ function Search(){
     let value = document.getElementById("search-content").value;
     window.location.replace(`search.html?name=${value}&type=name`)
 }
+function SearchByGenre(id){
+    // let value = document.getElementById("search-content").value;
+    window.location.replace(`search.html?name=${id}&type=genre`);
+}
 // function to activate side menu
 function sidebar(){
     var bg = document.getElementById("dark-bg");
@@ -56,17 +60,24 @@ function ShowContent(id){
     drop.classList.toggle("drop");
 }
 function ShowMovies(response){
+    for(i in response.results) console.log(response.results[i].first_air_date)
     ft_movies = response.results;
     let ft_movies_content = ''
     for(ele in ft_movies){
         if(ft_movies[ele].poster_path != null){
+            title = ft_movies[ele].title;
+            date = ft_movies[ele].release_date;
+            if(ft_movies[ele].media_type == "tv"){
+                title = ft_movies[ele].name;
+                date = ft_movies[ele].first_air_date;
+            }
             ft_movies_content += `
             <div class="film" id="${ft_movies[ele].id}">
                 <a href="film.html?id=${ft_movies[ele].id}">
                     <div class="thumbnail" style="background-image: url('https://image.tmdb.org/t/p/w500${ft_movies[ele].poster_path}');background-size: contain;"></div>
                     <div class="film-des-show">
-                        <p class="title">${ft_movies[ele].title}</p>
-                        <div class="other">${ft_movies[ele].release_date}</div>
+                        <p class="title">${title}</p>
+                        <div class="other">${date}</div>
                     </div>
                 </a>
             </div>`;
