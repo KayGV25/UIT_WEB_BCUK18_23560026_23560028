@@ -230,7 +230,7 @@ a:active,a:visited{
     column-gap: 10px;
     row-gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 .film{
     display: flex;
@@ -244,8 +244,17 @@ a:active,a:visited{
 }
 .title{
     width: 100%;
-    font-size: 20pt;
+    max-height: 15vh;
+    font-size: 15pt;
     margin: 0;
     font-weight: bold;
-    overflow-x: hidden;
+    overflow: hidden;
+
+}
+.film-des-show{
+    height: 20vh;
+}
+.drop-ft{
+    width: 100%;
+    padding-left: 2vw;
 }
