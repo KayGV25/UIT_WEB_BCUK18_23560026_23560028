@@ -9,11 +9,11 @@ const options = {
 // Search db for movies -> return none page if none is found
 function Search(){
     let value = document.getElementById("search-content").value;
-    window.location.replace(`search.html?name=${value}&type=name`)
+    window.location.replace(`/search?name=${value}&type=name`)
 }
 function SearchByGenre(id){
     // let value = document.getElementById("search-content").value;
-    window.location.replace(`search.html?name=${id}&type=genre`);
+    window.location.replace(`/search?name=${id}&type=genre`);
 }
 // function to activate side menu
 function sidebar(){
@@ -43,7 +43,7 @@ function ShowMovies(response,id){
     for(ele in ft_movies){
         ft_movies_content += `
         <div class="film" id="${ft_movies[ele].id}">
-            <a href="film.html?id=${ft_movies[ele].id}">
+            <a href="/film?id=${ft_movies[ele].id}">
                 <div class="thumbnail" style="background-image: url('https://image.tmdb.org/t/p/w500${ft_movies[ele].poster_path}');background-size: contain;"></div>
                 <div class="film-des-show">
                     <p class="title">${ft_movies[ele].title}</p>

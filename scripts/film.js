@@ -64,3 +64,7 @@ function ShowMovies(response){
     </div>`;
     document.getElementById("main").innerHTML = content;
 }
+
+function add_to_wl(){
+    
+}

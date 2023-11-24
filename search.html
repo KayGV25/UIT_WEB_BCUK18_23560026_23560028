@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <script src="scripts/search.js"></script>
     <script src="scripts/genre.js"></script>
+    <script src="index.js"></script>
     <title>Web app</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
     <div class="side-menu hide" id="side-menu">
         <p class="close" onclick="sidebar()">Close menu</p>
         <div class="side-menu-content">
-            <p><a href="index.html" style="text-decoration: none;">Home</a></p>
+            <p><a href="index" style="text-decoration: none;">Home</a></p>
             <p>Genre <span class="material-icons" style="float: right;" onclick="ShowContent('drop-sb')">add</span></p>
             <div id="drop-sb" class="drop">
                 <div class="sub-content" id="genre"></div>
@@ -34,14 +35,14 @@
         <div class="nav-cont">
             <div class="left">
                 <span class="material-icons" style="font-size: 2.5vw; cursor: pointer;" onclick="sidebar()">menu</span>
-                <a href="index.html"><p class="Logo">MOVIESBAY</p></a>
+                <a href="index"><p class="Logo">MOVIESBAY</p></a>
             </div>
             <div class="search">
                 <span class="material-icons">search</span>
                 <input type="text" placeholder="Enter Movie name..." id="search-content" class="input">
             </div>
             <div class="right">
-                <a href="upgrade-plan.html" class="Upgrd-plan">Upgrade plan</a>
+                <a href="upgrade-plan" class="Upgrd-plan">Upgrade plan</a>
                 <div class="ava"></div>
             </div>
         </div>
