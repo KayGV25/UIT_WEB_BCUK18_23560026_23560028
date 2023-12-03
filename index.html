@@ -9,6 +9,7 @@
     <script src="scripts/script.js"></script>
     <script src="index.js"></script>
     <script src="scripts/genre.js"></script>
+    <script src="scripts/login.js"></script>
     <title>Web app</title>
 </head>
 <body>
@@ -25,9 +26,9 @@
                 <div class="sub-content" id="genre"></div>
             </div>
         </div>
-        <div class="logout">
+        <div class="logout" onclick="loginsignout()">
             <span class="material-icons">logout</span>
-            <p>Sign Out</p>
+            <p id="Li_SoVal">Sign Out</p>
         </div>
     </div>
     <!-- Nav bar -->
@@ -42,7 +43,8 @@
                 <input type="text" placeholder="Enter Movie name..." id="search-content" class="input">
             </div>
             <div class="right">
-                <a href="upgrade-plan" class="Upgrd-plan">Upgrade plan</a>
+                <a class="Upgrd-plan" href="upgrade-plan">Upgrade plan</a>
+                <!-- <a class="Upgrd-plan" onclick="CheckifLogin()">Upgrade plan</a> -->
                 <div class="ava"></div>
             </div>
         </div>

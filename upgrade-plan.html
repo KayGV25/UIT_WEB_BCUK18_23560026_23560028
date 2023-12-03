@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/LU.css">
     <script src="scripts/script.js"></script>
+    <!-- <script tyqe="module" src="scripts/Momo.js"></script> -->
     <script src="index.js"></script>
     <title>Upgrade Plan</title>
 </head>
@@ -19,7 +20,9 @@
                 <div style="font-size: 25pt; text-align: center;">
                     <p><b>Watch all the movies you want</b></p>
                     <p>Only: 70.000đ/month</p>
-                    <button class="submit-btn" onclick="">Upgrade</button>
+                    <form action="/checkout" method="post">
+                        <button class="submit-btn" id="payWithMoMo">Upgrade</button>
+                    </form>
                 </div>
             </div>
        </div>

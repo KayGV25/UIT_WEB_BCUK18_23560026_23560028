@@ -1,3 +1,4 @@
+
 const options = {
     method: 'GET',
     headers: {
@@ -6,6 +7,10 @@ const options = {
     }
   };
 
+//   uid = window.localStorage.getItem('uid');
+//   if(uid != '0') document.getElementById('Li_SoVal').innerText = 'Sign out';
+//   else document.getElementById('Li_SoVal').innerText = 'Sign in'; 
+// window.localStorage.setItem('uid', '1')
 // Search db for movies -> return none page if none is found
 function Search(){
     let value = document.getElementById("search-content").value;
@@ -21,6 +26,13 @@ function sidebar(){
     var sidebar = document.getElementById("side-menu");
     bg.classList.toggle("hide");
     sidebar.classList.toggle("hide");
+    uid = window.localStorage.getItem('uid');
+    if(uid == null){
+        document.getElementById('Li_SoVal').innerText = 'Sign in'
+    }
+    else{
+        document.getElementById('Li_SoVal').innerText = 'Sign out'
+    }
 }
 // general function to show ddrop down content (not show on hover)
 function ShowContent(id){
@@ -64,3 +76,42 @@ for(i=1; i<=3;i++){
     })
     .catch(err => console.error(err));
 }
+
+const search_bar_url = window.location.search;
+const param = new URLSearchParams(search_bar_url);
+// resultCode=0&message=Successful
+const Rc = param.get('resultCode');
+const Msg = param.get('message');
+if(Rc == '0' && Msg == 'Successful.'){
+    AddPaymentToDB(uid);
+}
+else{
+    // window.location.replace('/index');
+    console.log(uid);
+}
+function AddPaymentToDB(id){
+    console.log(id);
+    window.location.replace('/index');
+}
+// function loginsignout(){
+//     uid = window.localStorage.getItem('uid');
+//     decider = document.getElementById('Li_SoVal').innerText;
+//     console.log(decider);
+//     if(decider == 'Sign out'){
+//         window.localStorage.setItem('uid','0');
+//         document.getElementById('Li_SoVal').innerText = 'Sign in';
+//         console.log(document.getElementById('Li_SoVal').innerText);
+//     }
+//     else{
+//         window.localStorage.setItem('uid','1');
+//         window.location.reload();
+//         // window.location.href = '/login';
+//     }
+// }
+// function CheckifLogin(){
+//     uid = window.localStorage.getItem('uid');
+//     if(uid != '0'){
+//         window.location.href = 'upgrade-plan';
+//     }
+//     else alert("Please Login");
+// }
