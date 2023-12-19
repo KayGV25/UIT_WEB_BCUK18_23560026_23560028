@@ -8,12 +8,26 @@ html(lang="en")
     script(src="index.js")
     title Login
   body
-    div.box-cont
-      div.box-dis
-        h1(style="margin: 0; font-size: 40pt; width: 20vw;") Sign In
-        form.input-holder(action="#", method="get")
-          p.sign-in-label Username
-          input(type="text", placeholder="Your Username", id="Username", class="sign-in-input")
-          p.sign-in-label Password
-          input(type="password", placeholder="Your Password", id="Password", class="sign-in-input")
-          input(type="submit", class="submit-btn", value="Sign In")
+    .login-box
+      .lb-header
+        a.active#login-box-link(href='#', onclick="loginclick()") Login
+        a#signup-box-link(href='#', onclick="signupclick()") Sign Up
+      form.email-login#email-login(method="POST", action="")
+        .u-form-group
+          input(type='email', placeholder='Email')
+        .u-form-group
+          input(type='password', placeholder='Password')
+        .u-form-group
+          input(type='submit', value="Login")
+        .u-form-group
+          a.forgot-password(href='#') Forgot password?
+      form.email-signup#email-signup(method="POST", action="")
+        .u-form-group
+          input(type='email', placeholder='Email')
+        .u-form-group
+          input(type='password', placeholder='Password')
+        .u-form-group
+          input(type='password', placeholder='Confirm Password')
+        .u-form-group
+          input(type='submit', value="Sign Up")
+    script(src="routes/login.js")
