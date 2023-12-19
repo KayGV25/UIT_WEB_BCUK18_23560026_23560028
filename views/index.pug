@@ -3,23 +3,6 @@ extends layout
 block content
     // Main section
     section.main
-      // Watch later
-      div.show-movies-container
-        div.show-movies-head
-          h1 Watch later
-          div.horizontal-line
-          span.material-symbols-outlined(style="margin: auto; font-weight: bold; font-size: 5vh; cursor: pointer;", onclick="ShowContent('drop-wl')") expand_more
-        div#drop-wl.drop-ft
-          div.show-movies#watch-later
-            // replace this with BE with the same class and structure
-            each _ in [1, 2, 3, 4, 5, 6]
-              div.film
-                a(href="#")
-                  div.thumbnail
-                  div.film-des-show
-                    p.title Movie name
-                    div.other 2023-180m
-            // ----------------------------------------------------
       // Favorite
       div.show-movies-container
         div.show-movies-head
