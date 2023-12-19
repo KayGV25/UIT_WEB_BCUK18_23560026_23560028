@@ -37,6 +37,11 @@ a:active,a:visited{
     margin: 0 auto;
     align-items: center;
 }
+@media only screen and (max-width: 768px){
+    .Logo{
+        display: none;
+    }
+}
 .Logo{
     margin: auto 0;
     margin-left: 4vw;
@@ -94,8 +99,8 @@ a:active,a:visited{
     font-size: 2.5vh;
 }
 .ava{
-    width: 3vw;
-    height: 3vw;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: inline-block;
     background-color: black;
@@ -206,8 +211,9 @@ a:active,a:visited{
     width: 100%;
 }
 .show-movies-head{
-    display: flex;
+    display: grid;
     flex-direction: row;
+    grid-template-columns: 200px auto 100px ;
     column-gap: 2%;
 }
 .show-movies-head h1{
@@ -235,10 +241,10 @@ a:active,a:visited{
 .film{
     display: flex;
     flex-direction: column;
-    width: 15%;
+    width: 200px;
 }
 .thumbnail{
-    width: 100%;
+    width: 200px;
     padding-top: 150%;
     background-color: black;
 }
