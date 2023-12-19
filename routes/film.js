@@ -63,10 +63,9 @@ h1.movie-name#movie-name ${response.title}
 p.movie-des#movie-des ${response.overview}
 .icon-container
     span.material-symbols-outlined#favorite(onclick='add_to_fav()') favorite
-    .Upgrd-plan
+    p.Upgrd-plan
         p.film-btn Watch now
-    .Upgrd-plan
-        p.film-btn(onclick='add_to_wl()') Watch later */
+    a.Upgrd-plan(href="upgrade-plan") Rent */
 
        /* <div class="show-container">
         <div class="poster" id="poster">
@@ -78,7 +77,7 @@ p.movie-des#movie-des ${response.overview}
             <div class="icon-container">
                 <span class="material-symbols-outlined" id="favorite" onclick="add_to_fav()">favorite</span>
                 <div class="Upgrd-plan"><p class="film-btn">Watch now</p></div>
-                <div class="Upgrd-plan"><p class="film-btn" onclick="add_to_wl()">Watch later</p></div>
+                <div class="Upgrd-plan"><a href="upgrade-plan"> Upgrade plan</a></div>
             </div>
         </div>
     </div> */
