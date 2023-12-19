@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F2F2F2;
+    background-image: url("https://lh3.google.com/u/2/d/1RMJkHVJX51WyP7ouqEo6-AdFo9p8V7GG=w1920-h868-iv1");
+    background-size: cover;
+    background-position: center;
+}
+.box-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+.box-dis{
+    background-color: white;
+    padding: 3vw;
+    padding-bottom: 10vh;
+    height: fit-content;
+    display: grid;
+    grid-template-rows: 30% auto;
+    border-radius: 30px;
+    font-family: 'Open Sans', sans-serif;
+    row-gap: 5vh;
+    
+}
+.input-holder p,.submit-btn{
+    margin: 0;
+    margin-top: 5%;
+}
+.sign-in-input{
+    width: 100%;
+    display: block;
+    height: 5vh;
+    border-radius: 7px;
+}
+.sign-in-label{
+    font-size: 15pt;
+}
+.submit-btn{
+    width: 103%;
+    background-color: #404040;
+    border: none;
+    color: white;
+    height: fit-content;
+    border-radius: 7px;
+    font-size: 15pt;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.br{
+    border: 1px solid black;
+    width: 70%;
+    height: 3px;
+    background-color: black;
+    margin: 3% auto;
+}

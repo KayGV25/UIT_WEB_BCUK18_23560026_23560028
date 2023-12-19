@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="public/stylesheets/LU.css")
+    script(src="routes/script.js")
+    script(src="index.js")
+    title Login
+  body
+    div.box-cont
+      div.box-dis
+        h1(style="margin: 0; font-size: 40pt; width: 20vw;") Sign In
+        form.input-holder(action="#", method="get")
+          p.sign-in-label Username
+          input(type="text", placeholder="Your Username", id="Username", class="sign-in-input")
+          p.sign-in-label Password
+          input(type="password", placeholder="Your Password", id="Password", class="sign-in-input")
+          input(type="submit", class="submit-btn", value="Sign In")

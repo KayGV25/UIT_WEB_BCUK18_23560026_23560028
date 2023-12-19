@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+
+.show-container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    column-gap: 3vw;
+    margin: 3vw;
+}
+.poster *{
+    width: 30vw;
+    height: auto;
+    border-radius: 5vw;
+}
+.show-des{
+    display: flex;
+    flex-direction: column;
+}
+.movie-name{
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 4vw;
+    margin: 0;
+}
+.movie-des{
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 1.6vw;
+    width: 50vw;
+    text-align: justify;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    height: 70vh;
+}
+.movie-des::-webkit-scrollbar{
+    display: none;
+}
+.icon-container{
+    display: flex;
+    flex-direction: row;
+    column-gap: 3vw;
+}
+#favorite{
+    font-size: 3vw;
+    display: flex;
+    align-items: center;
+}
+.film-btn{
+    font-size: 2vw;
+    margin: 0;
+    padding: 0.5vh;
+    width: 15vw;
+    text-align: center;
+}

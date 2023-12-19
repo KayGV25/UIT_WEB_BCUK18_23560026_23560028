@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="public/stylesheets/style.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined")
+    script(src="routes/search.js")
+    script(src="routes/genre.js")
+    script(src="routes/login.js")
+    script(src="index.js")
+    title Web app
+  body
+    // To top
+    a(href="#nav")
+      span.material-symbols-outlined(style="position: fixed; bottom: 0; right: 0; margin: 1.5vw; font-size: 30pt;") expand_less
+    // Side menu
+    div.dark-bg.hide(id="dark-bg")
+    div.side-menu.hide(id="side-menu")
+      p.close(onclick="sidebar()") Close menu
+      div.side-menu-content
+        p
+          a(href="index", style="text-decoration: none;") Home
+        p
+          | Genre
+          span.material-icons(style="float: right;", onclick="ShowContent('drop-sb')") add
+        div#drop-sb.drop
+          div.sub-content#genre
+      div.logout
+        span.material-icons logout
+        p Sign Out
+    // Nav bar
+    nav#nav
+      div.nav-cont
+        div.left
+          span.material-icons(style="font-size: 2.5vw; cursor: pointer;", onclick="sidebar()") menu
+          a(href="index")
+            p.Logo MOVIESBAY
+        div.search
+          span.material-icons search
+          input(type="text", placeholder="Enter Movie name...", id="search-content", class="input")
+        div.right
+          a(href="upgrade-plan", class="Upgrd-plan") Upgrade plan
+          div.ava
+    // Main section
+    section.main
+      div.show-movies#main

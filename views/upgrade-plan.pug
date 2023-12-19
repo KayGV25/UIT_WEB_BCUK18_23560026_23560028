@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="public/stylesheets/LU.css")
+    script(src="routes/script.js")
+    //- script(type="module", src="scripts/Momo.js")
+    script(src="index.js")
+    title Upgrade Plan
+  body
+    .box-cont
+      .box-dis(style="width: 40vw;")
+        div
+          h1(style="margin: 0; font-size: 40pt; text-align: center;") MOIVESBAY PREMIUM
+          .br
+        div
+          div(style="font-size: 25pt; text-align: center;")
+            p
+              b Watch all the movies you want
+            p Only: 70.000đ/month
+            form(action="/checkout", method="post")
+              button.submit-btn#payWithMoMo Upgrade
