@@ -6,6 +6,10 @@ const app = express();
 const path = require('path'); 
 const { nextTick } = require('process');
 const router = express.Router();
+// setup viewengine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 var MomoLink = '';
 // Setup essential routes 
 router.get('/', function(req, res) { 
