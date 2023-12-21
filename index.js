@@ -19,8 +19,17 @@ router.get('/index', function(req, res) {
     res.render(path.join(__dirname + '/views/index.pug')); 
     //__dirname : It will resolve to your project folder. 
 }); 
-router.get('/film', function(req, res) { 
-    res.render(path.join(__dirname + '/views/film.pug')); 
+router.post('/film', function(req, res, next) { 
+    data = req.body;
+    id = data.id;
+    fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        res.render(path.join(__dirname + '/views/film.pug')); 
+    })
+    .catch(err => console.error(err));
+    res.render(path.join(__dirname + '/views/film.pug'));
 });
 router.get('/login', function(req, res) { 
     res.render(path.join(__dirname + '/views/login.pug')); 

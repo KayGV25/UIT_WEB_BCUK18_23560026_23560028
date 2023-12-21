@@ -47,21 +47,33 @@ document.addEventListener("keydown",function(key){
         }
     }
 })
-
+function Film(id){
+    console.log(id);
+    fetch('http://localhost:8000/film', {
+        method: "POST",
+        body: JSON.stringify({
+          id: id,
+          title: "ID"
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+}
 // show featured movie
 function ShowMovies(response,id){
     ft_movies = response.results;
     let ft_movies_content = ''
     for(ele in ft_movies){
         ft_movies_content += `
-        <div class="film" id="${ft_movies[ele].id}">
-            <a href="/film?id=${ft_movies[ele].id}">
+        <div class="film" id="${ft_movies[ele].id}" onclick="Film('${ft_movies[ele].id}')">
+            <div onclick="Film(${ft_movies[ele].id})">
                 <div class="thumbnail" style="background-image: url('https://image.tmdb.org/t/p/w500${ft_movies[ele].poster_path}');background-size: contain;"></div>
                 <div class="film-des-show">
                     <p class="title">${ft_movies[ele].title}</p>
                     <div class="other">${ft_movies[ele].release_date}</div>
                 </div>
-            </a>
+            </div>
         </div>`;
     }
     console.log(ft_movies);

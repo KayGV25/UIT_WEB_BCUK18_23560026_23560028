@@ -11,16 +11,20 @@ const options = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYzFjNjc3MTI5Y2I1ZGQxNzM4OTRmNzQyZmNjNmMwZCIsInN1YiI6IjY1NWMzNjg4ZDRmZTA0MDBjNDI1N2QzYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XM1rkMipIifqel9k6Q1xruUwaYDD7oy2g8ylt9kgkTw'
     }
   };
-  
-  fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
-    .then(response => response.json())
-    .then(response => {
-        ShowMovies(response);
-        console.log(response);
-    })
-    .catch(err => console.error(err));
 
-
+// function Film(id){
+//     console.log(id);
+//     fetch('/index/film', {
+//         method: "POST",
+//         body: JSON.stringify({
+//           id: id,
+//           title: "ID"
+//         }),
+//         headers: {
+//           "Content-type": "application/json; charset=UTF-8"
+//         }
+//     })
+// }
 
 //Press enter to search
 document.addEventListener("keydown",function(key){
@@ -45,14 +49,6 @@ function sidebar(){
 function ShowContent(id){
     var drop = document.getElementById(id);
     drop.classList.toggle("drop");
-}
-function ShowMovies(response){
-    let content = ``;
-    document.getElementById("main").innerHTML = content;
-}
-
-function add_to_wl(){
-    
 }
 
 /* .show-container
