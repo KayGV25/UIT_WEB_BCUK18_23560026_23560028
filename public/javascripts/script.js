@@ -25,13 +25,6 @@ function sidebar(){
     var sidebar = document.getElementById("side-menu");
     bg.classList.toggle("hide");
     sidebar.classList.toggle("hide");
-    uid = window.localStorage.getItem('uid');
-    if(uid == null){
-        document.getElementById('Li_SoVal').innerText = 'Sign in'
-    }
-    else{
-        document.getElementById('Li_SoVal').innerText = 'Sign out'
-    }
 }
 // general function to show ddrop down content (not show on hover)
 function ShowContent(id){
@@ -92,25 +85,13 @@ function AddPaymentToDB(id){
     console.log(id);
     window.location.replace('/index');
 }
-// function loginsignout(){
-//     uid = window.localStorage.getItem('uid');
-//     decider = document.getElementById('Li_SoVal').innerText;
-//     console.log(decider);
-//     if(decider == 'Sign out'){
-//         window.localStorage.setItem('uid','0');
-//         document.getElementById('Li_SoVal').innerText = 'Sign in';
-//         console.log(document.getElementById('Li_SoVal').innerText);
-//     }
-//     else{
-//         window.localStorage.setItem('uid','1');
-//         window.location.reload();
-//         // window.location.href = '/login';
-//     }
-// }
-// function CheckifLogin(){
-//     uid = window.localStorage.getItem('uid');
-//     if(uid != '0'){
-//         window.location.href = 'upgrade-plan';
-//     }
-//     else alert("Please Login");
-// }
+function loginsignout(){
+    fetch('/logout', {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      }).then(() => {
+        window.location.reload();
+      })
+}

@@ -24,6 +24,10 @@ router.post('/login', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-// Not test yet
 
+router.post('/logout', (req,res,next) => {
+    console.log("success")
+    req.session.loggedIn = false;
+    res.redirect('/login');
+})
 module.exports =  router;
