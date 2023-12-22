@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// var session = require("express-session") related to block login
+var session = require("express-session") //related to block login
 
 var checkoutRouter = require('./routes/checkout');
 var indexRouter = require('./routes/index');
@@ -30,6 +30,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || '12345?a',
+    name: "app",
+    resave: true,
+    saveUninitialized: true
+    // cookie: { maxAge: 6000 } /* 6000 ms? 6 seconds -> wut? :S */
+  })
+);
 
 app.use('/checkout', checkoutRouter);
 app.use('/', indexRouter);

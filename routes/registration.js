@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const TodoModel = require('../db')
+const TodoModel = require('../db');
 
 /* Import registration data to MongoDB */
 router.post('/db', function(req, res, next) {
