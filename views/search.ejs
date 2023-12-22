@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <script src="javascripts/search.js"></script>
+    <script src="javascripts/genre.js"></script>
+    <script src="javascripts/login.js"></script>
+    <title>Web app</title>
+</head>
+<body>
+    <!-- To top -->
+    <a href="#nav"><span class="material-symbols-outlined" style="position: fixed; bottom: 0; right: 0; margin: 1.5vw; font-size: 30pt;">expand_less</span></a>
+    <!-- Side menu -->
+    <div class="dark-bg hide" id="dark-bg"></div>
+    <div class="side-menu hide" id="side-menu">
+        <p class="close" onclick="sidebar()">Close menu</p>
+        <div class="side-menu-content">
+            <p><a href="index" style="text-decoration: none;">Home</a></p>
+            <p>Genre <span class="material-icons" style="float: right;" onclick="ShowContent('drop-sb')">add</span></p>
+            <div id="drop-sb" class="drop">
+                <div class="sub-content" id="genre"></div>
+            </div>
+        </div>
+        <div class="logout">
+            <span class="material-icons">logout</span>
+            <p>Sign Out</p>
+        </div>
+    </div>
+    <!-- Nav bar -->
+    <nav id="nav">
+        <div class="nav-cont">
+            <div class="left">
+                <span class="material-icons" style="font-size: 2.5vw; cursor: pointer;" onclick="sidebar()">menu</span>
+                <a href="index"><p class="Logo">MOVIESBAY</p></a>
+            </div>
+            <div class="search">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Enter Movie name..." id="search-content" class="input">
+            </div>
+            <div class="right">
+                <a href="upgrade-plan" class="Upgrd-plan">Upgrade plan</a>
+                <div class="ava"></div>
+            </div>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="show-movies" id="main">
+            
+        </div>
+    </section>
+</body>

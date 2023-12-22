@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/LU.css">
+    <script src="javascripts/script.js"></script>
+    <script src="javascripts/login.js" defer></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-box">
+        <div class="lb-header">
+            <a class="active" id="login-box-link" href="#" onclick="loginclick()">Login</a>
+            <a id="signup-box-link" href="#" onclick="signupclick()">Sign Up</a>
+        </div>
+        <form class="email-login" id="email-login" method="POST" action="/login">
+            <div class="u-form-group">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="u-form-group">
+                <input type="password" placeholder="Password">
+            </div>
+            <div class="u-form-group">
+                <input type="submit" value="Login">
+            </div>
+            <div class="u-form-group">
+                <a class="forgot-password" href="#">Forgot password?</a>
+            </div>
+        </form>
+        <form class="email-signup" id="email-signup" method="POST" action="/db">
+            <div class="u-form-group">
+                <input type="email" placeholder="Email" name="Email">
+            </div>
+            <div class="u-form-group">
+                <input type="password" placeholder="Password" name="Password">
+            </div>
+            <div class="u-form-group">
+                <input type="password" placeholder="Confirm Password">
+            </div>
+            <div class="u-form-group">
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

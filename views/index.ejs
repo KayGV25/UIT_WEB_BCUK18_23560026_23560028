@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <script src="javascripts/script.js"></script>
+    <script src="javascripts/genre.js"></script>
+    <script src="javascripts/login.js"></script>
+    <title>Web app</title>
+</head>
+<body>
+    <!-- To top -->
+    <a href="#nav"><span class="material-symbols-outlined" style="position: fixed; bottom: 0; right: 0; margin: 1.5vw; font-size: 30pt;">expand_less</span></a>
+    <!-- Side menu -->
+    <div class="dark-bg hide" id="dark-bg"></div>
+    <div class="side-menu hide" id="side-menu">
+        <p class="close" onclick="sidebar()">Close menu</p>
+        <div class="side-menu-content">
+            <p><a href="index" style="text-decoration: none;">Home</a></p>
+            <p>Genre <span class="material-icons" style="float: right;" onclick="ShowContent('drop-sb')">add</span></p>
+            <div id="drop-sb" class="drop">
+                <div class="sub-content" id="genre"></div>
+            </div>
+        </div>
+        <div class="logout" onclick="loginsignout()">
+            <span class="material-icons">logout</span>
+            <p id="Li_SoVal">Sign Out</p>
+        </div>
+    </div>
+    <!-- Nav bar -->
+    <nav id="nav">
+        <div class="nav-cont">
+            <div class="left">
+                <span class="material-icons" style="font-size: 2.5vw; cursor: pointer;" onclick="sidebar()">menu</span>
+                <p class="Logo">MOVIESBAY</p>
+            </div>
+            <div class="search">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Enter Movie name..." id="search-content" class="input">
+            </div>
+            <div class="right">
+                <a class="Upgrd-plan" href="upgrade-plan">Upgrade plan</a>
+                <!-- <a class="Upgrd-plan" onclick="CheckifLogin()">Upgrade plan</a> -->
+                <div class="ava"></div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main section -->
+    <section class="main">
+        <!-- Watch later -->
+        <div class="show-movies-container">
+            <div class="show-movies-head">
+                <h1>Watch later</h1>
+                <div class="horizontal-line"></div>
+                <span class="material-symbols-outlined" style="margin: auto; font-weight: bold; font-size: 5vh; cursor: pointer;" onclick="ShowContent('drop-wl')">expand_more</span>
+            </div>
+            <div id="drop-wl" class="drop-ft">
+                <div class="show-movies" id="watch-later">
+                    <!-- replace this with BE whith the same class and structure -->
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- ---------------------------------------------------- -->
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Favorite -->
+        <div class="show-movies-container">
+            <div class="show-movies-head">
+                <h1>Favorite</h1>
+                <div class="horizontal-line"></div>
+                <span class="material-symbols-outlined" style="margin: auto; font-weight: bold; font-size: 5vh; cursor: pointer;" onclick="ShowContent('drop-fr')">expand_more</span>
+            </div>
+            <div id="drop-fr" class="drop-ft">
+                <div class="show-movies" id="watch-later">
+                    <!-- replace this with BE whith the same class and structure -->
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- ---------------------------------------------------- -->
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="film" id=""> <!-- Add movie id here -->
+                        <a href="#">
+                            <div class="thumbnail"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Featured -->
+        <div class="show-movies-container">
+            <div class="show-movies-head">
+                <h1>Featured</h1>
+                <div class="horizontal-line"></div>
+                <span class="material-symbols-outlined" style="margin: auto; font-weight: bold; font-size: 5vh; cursor: pointer;" onclick="ShowContent('drop-ft')">expand_more</span>
+            </div>
+            <div id="drop-ft" class="drop-ft">
+                <div class="show-movies" id="ft-movies">
+                    <!-- replace this with BE whith the same class and structure -->
+                    <!-- <div class="film" id="">
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url('https://image.tmdb.org/t/p/w500//vBZ0qvaRxqEhZwl6LWmruJqWE8Z.jpg');"></div>
+                            <div class="film-des-show">
+                                <p class="title">Movie name</p>
+                                <div class="other">2023-180m</div>
+                            </div>
+                        </a>
+                    </div> -->
+                    <!-- ---------------------------------------------------- -->
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
