@@ -4,7 +4,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get(['/', '/index'], /*checkLogin,*/ function(req, res, next)  {
-  res.render('index');
+  if(req.session.loggedIn) res.render('index')
+  res.redirect('/login');
 });
 /* GET film page. */
 router.get('/film', function(req, res, next) {
