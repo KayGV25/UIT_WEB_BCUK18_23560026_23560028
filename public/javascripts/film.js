@@ -3,6 +3,7 @@ const param = new URLSearchParams(search_bar_url);
 
 const id = param.get('id');
 console.log(id);
+var data; // biến lưu data của film
 
 const options = {
     method: 'GET',
@@ -15,6 +16,7 @@ const options = {
   fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
     .then(response => response.json())
     .then(response => {
+        data = response;
         ShowMovies(response);
         console.log(response);
     })
