@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const User = require('../db');
+var User = require('../db');
 
 /* Import registration data to MongoDB */
 router.post('/db', async function(req, res, next) {

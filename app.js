@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var session = require("express-session") //related to block login
+var session = require("express-session");
 
 var checkoutRouter = require('./routes/checkout');
 var indexRouter = require('./routes/index');
@@ -44,16 +44,6 @@ app.use('/checkout', checkoutRouter);
 app.use('/', indexRouter);
 app.use('/', loginRouter);
 app.use('/', registrationRouter);
-
-// app.use(
-//   session({
-//     secret: 'your-secret-key',
-//     name: "app",
-//     resave: true,
-//     saveUninitialized: true
-//   })
-// ); 
-// related to block login
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
