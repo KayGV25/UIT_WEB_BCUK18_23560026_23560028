@@ -86,6 +86,7 @@ function AddPaymentToDB(id){
     window.location.replace('/index');
 }
 function loginsignout(){
+    window.localStorage.clear();
     fetch('/logout', {
         method: "POST",
         headers: {

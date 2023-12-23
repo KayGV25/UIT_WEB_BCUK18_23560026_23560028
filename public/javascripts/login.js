@@ -14,3 +14,10 @@ function loginclick(){
     document.getElementById("login-box-link").classList.add("active");
     document.getElementById("signup-box-link").classList.remove("active");
 }
+
+document.getElementById("submit").addEventListener("click", () => {
+    var user = document.getElementById("user").value;
+    window.localStorage.setItem("user", user);
+})
+
+window.localStorage.clear();
