@@ -5,6 +5,7 @@ var TodoModel = require('../db');
 router.post('/add_to_fav', async function(req, res, next) {
     try {
         const { user, movieData } = req.body;
+        console.log("recieve " + user + " - " + movieData);
     /* Update DB */
     await TodoModel.updateOne(
         { Email: user },

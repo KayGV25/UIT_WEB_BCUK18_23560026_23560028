@@ -4,6 +4,7 @@ const user = window.localStorage.getItem("user");
 
 const id = param.get('id');
 console.log(id);
+var data;
 
 const options = {
     method: 'GET',
@@ -19,7 +20,6 @@ const options = {
         data = response;
         ShowMovies(response);
         console.log(response);
-        add_to_fav(response);
     })
     .catch(err => console.error(err));
 
@@ -66,12 +66,13 @@ function ShowMovies(response){
     document.getElementById("main").innerHTML = content;
 }
 
-async function add_to_fav(response){
+async function add_to_fav(){
     try {
         /* Get movie data */
-        var urlImage = response.poster_path;
-        var filmName = response.title;
-        var releaseDate = response.release_date ;
+        var urlImage = data.poster_path;
+        var filmName = data.title;
+        var releaseDate = data.release_date ;
+        console.log(data)
         /* Post request */
         await fetch('/add_to_fav', {
             method: 'POST',
@@ -82,6 +83,8 @@ async function add_to_fav(response){
                 user: user,
                 movieData: { urlImage, filmName, releaseDate }
             }),   
+        }).then(()=>{
+            console.log(data);
         });
     }
     catch (error) {
