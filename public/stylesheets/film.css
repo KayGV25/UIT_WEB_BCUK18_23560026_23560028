@@ -3,15 +3,18 @@
 
 .show-container{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     flex-direction: row;
-    column-gap: 3vw;
+    gap: 3vw;
     margin: 3vw;
+    place-content: center;
 }
 .poster *{
-    width: 30vw;
+    width: 350px;
     height: auto;
     border-radius: 5vw;
+
 }
 .show-des{
     display: flex;
@@ -19,17 +22,27 @@
 }
 .movie-name{
     font-family: 'Ropa Sans', sans-serif;
-    font-size: 4vw;
+    font-size: 40pt;
+    width: 50vw;
     margin: 0;
 }
 .movie-des{
     font-family: 'Ropa Sans', sans-serif;
-    font-size: 1.6vw;
+    font-size: 16pt;
     width: 50vw;
     text-align: justify;
     overflow-y: scroll;
     scrollbar-width: none;
-    height: 70vh;
+    height: 390px;
+}
+@media only screen and (max-width: 1225px){
+    .movie-des{
+        height: fit-content;
+        width: 100%;
+    }
+    .movie-name{
+        width: 100%;
+    }
 }
 .movie-des::-webkit-scrollbar{
     display: none;
@@ -37,6 +50,7 @@
 .icon-container{
     display: flex;
     flex-direction: row;
+    place-content: center;
     column-gap: 3vw;
 }
 #favorite{
@@ -45,9 +59,20 @@
     align-items: center;
 }
 .film-btn{
-    font-size: 2vw;
+    font-size: 16pt;
     margin: 0;
     padding: 0.5vh;
     width: 15vw;
     text-align: center;
+}
+.f-btn{
+    background-color: #404040;
+    border: none;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.3rem 1.3rem;
+    text-decoration: none;
+    margin-left: 10px;
+    width: fit-content;
 }

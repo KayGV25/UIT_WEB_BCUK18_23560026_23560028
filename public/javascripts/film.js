@@ -56,9 +56,9 @@ function ShowMovies(response){
             <h1 class="movie-name" id="movie-name">${response.title}</h1>
             <p class="movie-des" id="movie-des">${response.overview}</p>
             <div class="icon-container">
-                <span class="material-symbols-outlined" id="favorite" onclick="add_to_fav()">favorite</span>
-                <div class="Upgrd-plan"><p class="film-btn">Watch now</p></div>
-                <div class="Upgrd-plan"><p class="film-btn" onclick="add_to_wl()">Watch later</p></div>
+                <span class="material-symbols-outlined" style="font-size: 30pt; cursor: pointer;" id="favorite" onclick="add_to_fav()">favorite</span>
+                <div class="f-btn"><p class="film-btn">Watch now</p></div>
+                <div class="f-btn"><p class="film-btn" onclick="add_to_wl()">Watch later</p></div>
             </div>
         </div>
     </div>`;

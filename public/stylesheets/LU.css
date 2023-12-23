@@ -3,9 +3,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
-  background-image: url("https://lh3.google.com/u/2/d/1RMJkHVJX51WyP7ouqEo6-AdFo9p8V7GG=w1920-h868-iv1");
+  /* background-image: url("https://lh3.google.com/u/2/d/1RMJkHVJX51WyP7ouqEo6-AdFo9p8V7GG=w1920-h868-iv1"); */
+  background-image: url("../images/MoviesBay-bg.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .box-cont {
   display: flex;
@@ -60,9 +62,14 @@ body {
   background-color: black;
   margin: 3% auto;
 }
+.l-container{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
 .login-box {
   position: relative;
-  margin: 10px auto;
   width: 500px;
   height: 380px;
   background-color: #fff;
