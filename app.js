@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require("express-session");
 
+var add_to_favRouter = require('./routes/add_to_fav');
 var checkoutRouter = require('./routes/checkout');
 var indexRouter = require('./routes/index');
 var registrationRouter = require('./routes/registration');
@@ -40,6 +41,7 @@ app.use(
   })
 );
 
+app.use('/', add_to_favRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/', indexRouter);
 app.use('/', loginRouter);

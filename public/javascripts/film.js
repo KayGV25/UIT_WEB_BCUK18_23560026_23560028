@@ -1,9 +1,9 @@
 const search_bar_url = window.location.search;
 const param = new URLSearchParams(search_bar_url);
+const user = window.localStorage.getItem("user");
 
 const id = param.get('id');
 console.log(id);
-var data; // biến lưu data của film
 
 const options = {
     method: 'GET',
@@ -19,10 +19,9 @@ const options = {
         data = response;
         ShowMovies(response);
         console.log(response);
+        add_to_fav(response);
     })
     .catch(err => console.error(err));
-
-
 
 //Press enter to search
 document.addEventListener("keydown",function(key){
@@ -67,6 +66,26 @@ function ShowMovies(response){
     document.getElementById("main").innerHTML = content;
 }
 
-function add_to_wl(){
-    
+async function add_to_fav(response){
+    try {
+        /* Get movie data */
+        var urlImage = response.poster_path;
+        var filmName = response.title;
+        var releaseDate = response.release_date ;
+        /* Post request */
+        await fetch('/add_to_fav', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user: user,
+                movieData: { urlImage, filmName, releaseDate }
+            }),   
+        });
+    }
+    catch (error) {
+        console.error('Error adding to favorites:', error.message);
+    }
 }
+
