@@ -69,6 +69,7 @@ function ShowMovies(response){
 async function add_to_fav(){
     try {
         /* Get movie data */
+        var movieId = data.id;
         var urlImage = data.poster_path;
         var filmName = data.title;
         var releaseDate = data.release_date ;
@@ -81,7 +82,7 @@ async function add_to_fav(){
             },
             body: JSON.stringify({
                 user: user,
-                movieData: { urlImage, filmName, releaseDate }
+                movieData: { movieId, urlImage, filmName, releaseDate }
             }),   
         }).then(()=>{
             console.log(data);

@@ -1,3 +1,5 @@
+const user = window.localStorage.getItem("user");
+
 const options = {
     method: 'GET',
     headers: {
@@ -39,6 +41,40 @@ document.addEventListener("keydown",function(key){
         }
     }
 })
+/* Fetch Fav data from DB */
+fetch('add_to_fav/data', {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        user: user
+    }),
+    })
+  .then(response => response.json())
+  .then(response => {
+    ShowFav(response,"fav-movies")
+  })
+  .catch(error => console.error(error));
+/* Show Fav */
+function ShowFav(response,id){
+    fav_movies = response;
+    let fav_movies_content = ''
+    for(ele in fav_movies){
+        fav_movies_content += `
+        <div class="film" id="${fav_movies[ele].movieId}">
+            <a href="/film?id=${fav_movies[ele].movieId}">
+                <div class="thumbnail" style="background-image: url('https://image.tmdb.org/t/p/w500${fav_movies[ele].urlImage}');background-size: contain;"></div>
+                <div class="film-des-show">
+                    <p class="title">${fav_movies[ele].filmName}</p>
+                    <div class="other">${fav_movies[ele].releaseDate}</div>
+                </div>
+            </a>
+        </div>`;
+    }
+    console.log(fav_movies);
+    document.getElementById(id).innerHTML += fav_movies_content;
+}
 
 // show featured movie
 function ShowMovies(response,id){

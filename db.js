@@ -6,6 +6,7 @@ const TodoSchema = new Schema({
 Email: { type: String, required: true },
 Password: { type: String, required: true },
 Fav: { 
+    movieId: { type: [ String ], default: []},
     urlImage: { type: [ String ], default: []},
     filmName: { type: [ String ], default: []},
     releaseDate: { type: [ String ], default: []}
