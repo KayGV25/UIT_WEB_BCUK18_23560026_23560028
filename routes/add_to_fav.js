@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var TodoModel = require('../db');
+var User = require('../db');
 
 router.post('/add_to_fav', async function(req, res, next) {
     try {
         const { user, movieData } = req.body;
         console.log("recieve " + user + " - " + movieData);
     /* Update DB */
-    await TodoModel.updateOne(
+    await User.updateOne(
         { Email: user },
         {
           $addToSet: {

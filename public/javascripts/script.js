@@ -6,10 +6,7 @@ const options = {
     }
   };
 
-//   uid = window.localStorage.getItem('uid');
-//   if(uid != '0') document.getElementById('Li_SoVal').innerText = 'Sign out';
-//   else document.getElementById('Li_SoVal').innerText = 'Sign in'; 
-// window.localStorage.setItem('uid', '1')
+
 // Search db for movies -> return none page if none is found
 function Search(){
     let value = document.getElementById("search-content").value;
@@ -59,7 +56,7 @@ function ShowMovies(response,id){
     console.log(ft_movies);
     document.getElementById(id).innerHTML += ft_movies_content;
 }
-  
+
 for(i=1; i<=3;i++){
     fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${i}`, options)
     .then(response => response.json())
