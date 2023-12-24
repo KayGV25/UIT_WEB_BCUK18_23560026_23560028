@@ -39,7 +39,7 @@ document.addEventListener("keydown",function(key){
     }
 })
 /* Fetch Fav data from DB */
-fetch('add_to_fav/data', {
+fetch('fav_data', {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
@@ -57,14 +57,15 @@ fetch('add_to_fav/data', {
 function ShowFav(response,id){
     fav_movies = response;
     let fav_movies_content = ''
-    for(ele in fav_movies){
+    console.log("response: " + fav_movies);
+    for(ele in fav_movies.movieId){
         fav_movies_content += `
-        <div class="film" id="${fav_movies[ele].movieId}">
-            <a href="/film?id=${fav_movies[ele].movieId}">
-                <div class="thumbnail" style="background-image: url('https://image.tmdb.org/t/p/w500${fav_movies[ele].urlImage}');background-size: contain;"></div>
+        <div class="film" id="${fav_movies.movieId[ele]}">
+            <a href="/film?id=${fav_movies.movieId[ele]}">
+                <div class="thumbnail" style="background-image: url('https://image.tmdb.org/t/p/w500${fav_movies.urlImage[ele]}');background-size: contain;"></div>
                 <div class="film-des-show">
-                    <p class="title">${fav_movies[ele].filmName}</p>
-                    <div class="other">${fav_movies[ele].releaseDate}</div>
+                    <p class="title">${fav_movies.filmName[ele]}</p>
+                    <div class="other">${fav_movies.releaseDate[ele]}</div>
                 </div>
             </a>
         </div>`;

@@ -27,16 +27,17 @@ router.post('/add_to_fav', async function(req, res, next) {
   });
 
 /* Send data from DB */
-router.post('/add_to_fav/data', async function(req, res, next) {
+router.post('/fav_data', async function(req, res, next) {
+  user = req.body.user;
   try {
     /* Fetch Fav data */
-    const data = await TodoModel.findOne({ Email: user });
+    const data = await User.findOne({ Email: user });
 
     if (!data) {
       return res.status(404).json({ error: 'User not found' });
     }
-
-    res.json(data.Fav);
+    console.log(data.Fav);
+    res.send(data.Fav);
   } 
   catch (error) {
     console.error(error);
