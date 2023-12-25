@@ -66,6 +66,7 @@ function ShowMovies(response){
 }
 
 async function add_to_fav(){
+    alert("Film has been added to Favorite");
     try {
         /* Get movie data */
         var movieId = data.id;
