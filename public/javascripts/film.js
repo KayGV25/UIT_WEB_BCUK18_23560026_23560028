@@ -59,7 +59,6 @@ function ShowMovies(response){
             <div class="icon-container">
                 <span class="material-symbols-outlined" style="font-size: 30pt; cursor: pointer;" id="favorite" onclick="add_to_fav()">favorite</span>
                 <div class="f-btn"><p class="film-btn">Watch now</p></div>
-                <div class="f-btn"><p class="film-btn" onclick="add_to_wl()">Watch later</p></div>
             </div>
         </div>
     </div>`;
