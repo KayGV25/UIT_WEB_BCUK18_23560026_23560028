@@ -4,7 +4,7 @@ var User = require('../db');
 
 /* Import registration data to MongoDB */
 router.post('/db', async function(req, res, next) {
-    let {Email, Password} = req.body;
+    let {Email, Password, CPassword} = req.body;
     try {
         const user = await User.findOne({ Email: Email, Password: Password });
         if (!user) {

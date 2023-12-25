@@ -20,4 +20,18 @@ document.getElementById("submit").addEventListener("click", () => {
     window.localStorage.setItem("user", user);
 })
 
+setInterval(() => {
+    p = document.getElementById("p").value;
+    cp = document.getElementById("cp").value;
+    if(p!=cp){
+        document.getElementById("btn").classList.remove("default-color");
+        document.getElementById("btn").classList.add("red");
+        document.getElementById("btn").setAttribute('disabled','');
+    }
+    else{
+        document.getElementById("btn").classList.add("default-color");
+        document.getElementById("btn").classList.remove("red");
+        document.getElementById("btn").removeAttribute('disabled')
+    }
+}, 500)
 window.localStorage.clear();

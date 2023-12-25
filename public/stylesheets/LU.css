@@ -169,7 +169,6 @@ body {
 }
 .u-form-group input[type="submit"] {
   width: 50%;
-  background-color: #404040;
   border: none;
   outline: none;
   color: #fff;
@@ -178,6 +177,12 @@ body {
   padding: 14px 0;
   border-radius: 2px;
   text-transform: uppercase;
+}
+.default-color{
+  background-color: #404040;
+}
+.red{
+  background-color: red;
 }
 .forgot-password {
   width: 50%;
