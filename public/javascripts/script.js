@@ -103,22 +103,22 @@ for(i=1; i<=3;i++){
     .catch(err => console.error(err));
 }
 
-const search_bar_url = window.location.search;
-const param = new URLSearchParams(search_bar_url);
-// resultCode=0&message=Successful
-const Rc = param.get('resultCode');
-const Msg = param.get('message');
-if(Rc == '0' && Msg == 'Successful.'){
-    AddPaymentToDB(uid);
-}
-else{
-    // window.location.replace('/index');
-    console.log(uid);
-}
-function AddPaymentToDB(id){
-    console.log(id);
-    window.location.replace('/index');
-}
+// const search_bar_url = window.location.search;
+// const param = new URLSearchParams(search_bar_url);
+// // resultCode=0&message=Successful
+// const Rc = param.get('resultCode');
+// const Msg = param.get('message');
+// if(Rc == '0' && Msg == 'Successful.'){
+//     AddPaymentToDB(uid);
+// }
+// else{
+//     // window.location.replace('/index');
+//     console.log(uid);
+// }
+// function AddPaymentToDB(id){
+//     console.log(id);
+//     window.location.replace('/index');
+// }
 function loginsignout(){
     window.localStorage.clear();
     fetch('/logout', {
