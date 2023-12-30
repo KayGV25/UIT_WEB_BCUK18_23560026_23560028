@@ -72,8 +72,7 @@ async function add_to_fav(){
         var movieId = data.id;
         var urlImage = data.poster_path;
         var filmName = data.title;
-        var releaseDate = data.release_date ;
-        console.log(data)
+        var releaseDate = data.release_date;
         /* Post request */
         await fetch('/add_to_fav', {
             method: 'POST',
